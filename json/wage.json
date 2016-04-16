@@ -1,0 +1,575 @@
+{
+  "EmployeeInfoEntity": [
+    {
+      "StaffID": "02100665",
+      "StaffName": "林 捷燕",
+      "DepartmentName": "乐清销售",
+      "PositionName": "销售经理I",
+      "WorkingLocationName": null,
+      "PayRollYear": "2015",
+      "PayPeriod": "11",
+      "BeginDate": "2015/11/01",
+      "EndDate": "2015/11/30",
+      "PrintDate": "2015/12/07",
+      "A_List": [
+        {
+          "Name": "基本工资",
+          "Money": "7000.00",
+          "Order": 0
+        },
+        {
+          "Name": "月度奖金",
+          "Money": "0.00",
+          "Order": 1
+        },
+        {
+          "Name": "加班工资",
+          "Money": "0.00",
+          "Order": 2
+        },
+        {
+          "Name": "生活补贴",
+          "Money": "1000.00",
+          "Order": 5
+        },
+        {
+          "Name": "租房津贴",
+          "Money": "500.00",
+          "Order": 5
+        }
+      ],
+      "B_List": [
+        {
+          "Name": "养老保险",
+          "Money": "800.00",
+          "Order": 0
+        },
+        {
+          "Name": "住房公积金",
+          "Money": "1200.00",
+          "Order": 1
+        },
+        {
+          "Name": "失业保险",
+          "Money": "50.00",
+          "Order": 2
+        },
+        {
+          "Name": "医疗保险",
+          "Money": "80.62",
+          "Order": 3
+        },
+        {
+          "Name": "大病统筹金",
+          "Money": "0.00",
+          "Order": 4
+        },
+        {
+          "Name": "个人所得税",
+          "Money": "181.94",
+          "Order": 5
+        },
+        {
+          "Name": "税后扣款",
+          "Money": "100.00",
+          "Order": 6
+        }
+      ],
+      "D_List": [
+        {
+          "Name": "养老保险",
+          "Money": "1400.00",
+          "Order": 0
+        },
+        {
+          "Name": "住房公积金",
+          "Money": "1200.00",
+          "Order": 1
+        },
+        {
+          "Name": "失业保险",
+          "Money": "150.00",
+          "Order": 2
+        },
+        {
+          "Name": "医疗保险",
+          "Money": "362.79",
+          "Order": 3
+        },
+        {
+          "Name": "生育保险",
+          "Money": "80.00",
+          "Order": 4
+        },
+        {
+          "Name": "工伤保险",
+          "Money": "40.00",
+          "Order": 5
+        },
+        {
+          "Name": "大病统筹金",
+          "Money": "0.00",
+          "Order": 6
+        }
+      ],
+      "F_list": [],
+      "IncomeTotalValue": "8500.00",
+      "DeductToalValue": "2412.56",
+      "ActualToalValue": "6087.44",
+      "ToalInsuranceByComp": "3232.79",
+      "CompToalCost": "11732.79",
+      "Remarks": [
+        {
+          "Pernr": "02100665",
+          "Year": "2015",
+          "Period": "11",
+          "Remarks": "1）根据沉香劈山救母的故事而改编的一部35集古装神话电视剧。"
+        },
+        {
+          "Pernr": "02100665",
+          "Year": "2015",
+          "Period": "11",
+          "Remarks": "2）该剧由香港导演余明生执导，九年、李洪伟编剧，曹骏，舒畅，焦恩俊等主演。"
+        },
+        {
+          "Pernr": "02100665",
+          "Year": "2015",
+          "Period": "11",
+          "Remarks": "3）主要讲述了二郎神忍辱负重帮助他外甥沉香救母改天条的故事。"
+        }
+      ],
+      "msgType": "I",
+      "Message": null
+    },
+    {
+      "StaffID": "02100665",
+      "StaffName": "林 捷燕",
+      "DepartmentName": "乐清销售",
+      "PositionName": "销售经理I",
+      "WorkingLocationName": null,
+      "PayRollYear": "2015",
+      "PayPeriod": "10",
+      "BeginDate": "2015/10/01",
+      "EndDate": "2015/10/31",
+      "PrintDate": "2015/12/07",
+      "IncomeTotalValue": "11130.00",
+      "DeductToalValue": "2775.50",
+      "ActualToalValue": "8354.50",
+      "ToalInsuranceByComp": "3232.79",
+      "A_List": [
+        {
+          "Name": "基本工资",
+          "Money": "7000.00",
+          "Order": 0
+        },
+        {
+          "Name": "月度奖金",
+          "Money": "2050.00",
+          "Order": 1
+        },
+        {
+          "Name": "加班工资",
+          "Money": "400.00",
+          "Order": 2
+        },
+        {
+          "Name": "其他津贴",
+          "Money": "50.00",
+          "Order": 5
+        },
+        {
+          "Name": "夜班津贴",
+          "Money": "130.00",
+          "Order": 5
+        },
+        {
+          "Name": "生活补贴",
+          "Money": "1000.00",
+          "Order": 5
+        },
+        {
+          "Name": "租房津贴",
+          "Money": "500.00",
+          "Order": 5
+        }
+      ],
+      "B_List": [
+        {
+          "Name": "养老保险",
+          "Money": "800.00",
+          "Order": 0
+        },
+        {
+          "Name": "住房公积金",
+          "Money": "1200.00",
+          "Order": 1
+        },
+        {
+          "Name": "失业保险",
+          "Money": "50.00",
+          "Order": 2
+        },
+        {
+          "Name": "医疗保险",
+          "Money": "80.62",
+          "Order": 3
+        },
+        {
+          "Name": "大病统筹金",
+          "Money": "0.00",
+          "Order": 4
+        },
+        {
+          "Name": "个人所得税",
+          "Money": "544.88",
+          "Order": 5
+        },
+        {
+          "Name": "税后扣款",
+          "Money": "100.00",
+          "Order": 6
+        }
+      ],
+      "D_List": [
+        {
+          "Name": "养老保险",
+          "Money": "1400.00",
+          "Order": 0
+        },
+        {
+          "Name": "住房公积金",
+          "Money": "1200.00",
+          "Order": 1
+        },
+        {
+          "Name": "失业保险",
+          "Money": "150.00",
+          "Order": 2
+        },
+        {
+          "Name": "医疗保险",
+          "Money": "362.79",
+          "Order": 3
+        },
+        {
+          "Name": "生育保险",
+          "Money": "80.00",
+          "Order": 4
+        },
+        {
+          "Name": "工伤保险",
+          "Money": "40.00",
+          "Order": 5
+        },
+        {
+          "Name": "大病统筹金",
+          "Money": "0.00",
+          "Order": 6
+        }
+      ],
+      "F_list": [],
+      "CompToalCost": "14362.79",
+      "Remarks": [
+        {
+          "Pernr": "02100665",
+          "Year": "2015",
+          "Period": "10",
+          "Remarks": "1）根据沉香劈山救母的故事而改编的一部35集古装神话电视剧。"
+        },
+        {
+          "Pernr": "02100665",
+          "Year": "2015",
+          "Period": "10",
+          "Remarks": "2）该剧由香港导演余明生执导，九年、李洪伟编剧，曹骏，舒畅，焦恩俊等主演。"
+        }
+      ],
+      "msgType": "I",
+      "Message": null
+    },
+    {
+      "StaffID": "02100665",
+      "StaffName": "林 捷燕",
+      "DepartmentName": "乐清销售",
+      "PositionName": "销售经理I",
+      "WorkingLocationName": null,
+      "PayRollYear": "2015",
+      "PayPeriod": "9",
+      "BeginDate": "2015/9/01",
+      "EndDate": "2015/9/30",
+      "PrintDate": "2015/12/07",
+      "A_List": [
+        {
+          "Name": "基本工资",
+          "Money": "7000.00",
+          "Order": 0
+        },
+        {
+          "Name": "月度奖金",
+          "Money": "0.00",
+          "Order": 1
+        },
+        {
+          "Name": "加班工资",
+          "Money": "0.00",
+          "Order": 2
+        },
+        {
+          "Name": "生活补贴",
+          "Money": "1000.00",
+          "Order": 5
+        },
+        {
+          "Name": "租房津贴",
+          "Money": "500.00",
+          "Order": 5
+        }
+      ],
+      "B_List": [
+        {
+          "Name": "养老保险",
+          "Money": "800.00",
+          "Order": 0
+        },
+        {
+          "Name": "住房公积金",
+          "Money": "1200.00",
+          "Order": 1
+        },
+        {
+          "Name": "失业保险",
+          "Money": "50.00",
+          "Order": 2
+        },
+        {
+          "Name": "医疗保险",
+          "Money": "80.62",
+          "Order": 3
+        },
+        {
+          "Name": "大病统筹金",
+          "Money": "0.00",
+          "Order": 4
+        },
+        {
+          "Name": "个人所得税",
+          "Money": "181.94",
+          "Order": 5
+        },
+        {
+          "Name": "税后扣款",
+          "Money": "100.00",
+          "Order": 6
+        }
+      ],
+      "D_List": [
+        {
+          "Name": "养老保险",
+          "Money": "1400.00",
+          "Order": 0
+        },
+        {
+          "Name": "住房公积金",
+          "Money": "1200.00",
+          "Order": 1
+        },
+        {
+          "Name": "失业保险",
+          "Money": "150.00",
+          "Order": 2
+        },
+        {
+          "Name": "医疗保险",
+          "Money": "362.79",
+          "Order": 3
+        },
+        {
+          "Name": "生育保险",
+          "Money": "80.00",
+          "Order": 4
+        },
+        {
+          "Name": "工伤保险",
+          "Money": "40.00",
+          "Order": 5
+        },
+        {
+          "Name": "大病统筹金",
+          "Money": "0.00",
+          "Order": 6
+        }
+      ],
+      "F_list": [],
+      "IncomeTotalValue": "8500.00",
+      "DeductToalValue": "2412.56",
+      "ActualToalValue": "6087.44",
+      "ToalInsuranceByComp": "3232.79",
+      "CompToalCost": "11732.79",
+      "Remarks": [
+        {
+          "Pernr": "02100665",
+          "Year": "2015",
+          "Period": "11",
+          "Remarks": "1）根据沉香劈山救母的故事而改编的一部35集古装神话电视剧。"
+        },
+        {
+          "Pernr": "02100665",
+          "Year": "2015",
+          "Period": "11",
+          "Remarks": "2）该剧由香港导演余明生执导，九年、李洪伟编剧，曹骏，舒畅，焦恩俊等主演。"
+        },
+        {
+          "Pernr": "02100665",
+          "Year": "2015",
+          "Period": "11",
+          "Remarks": "3）主要讲述了二郎神忍辱负重帮助他外甥沉香救母改天条的故事。"
+        }
+      ],
+      "msgType": "I",
+      "Message": null
+    },
+    {
+      "StaffID": "02100665",
+      "StaffName": "林 捷燕",
+      "DepartmentName": "乐清销售",
+      "PositionName": "销售经理I",
+      "WorkingLocationName": null,
+      "PayRollYear": "2015",
+      "PayPeriod": "8",
+      "BeginDate": "2015/8/01",
+      "EndDate": "2015/8/31",
+      "PrintDate": "2015/12/07",
+      "IncomeTotalValue": "11130.00",
+      "DeductToalValue": "2775.50",
+      "ActualToalValue": "8354.50",
+      "ToalInsuranceByComp": "3232.79",
+      "A_List": [
+        {
+          "Name": "基本工资",
+          "Money": "7000.00",
+          "Order": 0
+        },
+        {
+          "Name": "月度奖金",
+          "Money": "2050.00",
+          "Order": 1
+        },
+        {
+          "Name": "加班工资",
+          "Money": "400.00",
+          "Order": 2
+        },
+        {
+          "Name": "其他津贴",
+          "Money": "50.00",
+          "Order": 5
+        },
+        {
+          "Name": "夜班津贴",
+          "Money": "130.00",
+          "Order": 5
+        },
+        {
+          "Name": "生活补贴",
+          "Money": "1000.00",
+          "Order": 5
+        },
+        {
+          "Name": "租房津贴",
+          "Money": "500.00",
+          "Order": 5
+        }
+      ],
+      "B_List": [
+        {
+          "Name": "养老保险",
+          "Money": "800.00",
+          "Order": 0
+        },
+        {
+          "Name": "住房公积金",
+          "Money": "1200.00",
+          "Order": 1
+        },
+        {
+          "Name": "失业保险",
+          "Money": "50.00",
+          "Order": 2
+        },
+        {
+          "Name": "医疗保险",
+          "Money": "80.62",
+          "Order": 3
+        },
+        {
+          "Name": "大病统筹金",
+          "Money": "0.00",
+          "Order": 4
+        },
+        {
+          "Name": "个人所得税",
+          "Money": "544.88",
+          "Order": 5
+        },
+        {
+          "Name": "税后扣款",
+          "Money": "100.00",
+          "Order": 6
+        }
+      ],
+      "D_List": [
+        {
+          "Name": "养老保险",
+          "Money": "1400.00",
+          "Order": 0
+        },
+        {
+          "Name": "住房公积金",
+          "Money": "1200.00",
+          "Order": 1
+        },
+        {
+          "Name": "失业保险",
+          "Money": "150.00",
+          "Order": 2
+        },
+        {
+          "Name": "医疗保险",
+          "Money": "362.79",
+          "Order": 3
+        },
+        {
+          "Name": "生育保险",
+          "Money": "80.00",
+          "Order": 4
+        },
+        {
+          "Name": "工伤保险",
+          "Money": "40.00",
+          "Order": 5
+        },
+        {
+          "Name": "大病统筹金",
+          "Money": "0.00",
+          "Order": 6
+        }
+      ],
+      "F_list": [],
+      "CompToalCost": "14362.79",
+      "Remarks": [
+        {
+          "Pernr": "02100665",
+          "Year": "2015",
+          "Period": "10",
+          "Remarks": "1）根据沉香劈山救母的故事而改编的一部35集古装神话电视剧。"
+        },
+        {
+          "Pernr": "02100665",
+          "Year": "2015",
+          "Period": "10",
+          "Remarks": "2）该剧由香港导演余明生执导，九年、李洪伟编剧，曹骏，舒畅，焦恩俊等主演。"
+        }
+      ],
+      "msgType": "I",
+      "Message": null
+    }
+]}

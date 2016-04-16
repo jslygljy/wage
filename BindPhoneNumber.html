@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绑定手机</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <!--<link rel="stylesheet" type="text/css" href="public/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="public/css/global.css" /> -->
+
+    <script type="text/javascript" src="public/vendor/jquery.js"></script>
+    <script type="text/javascript" src="public/vendor/caculate-rem.js"></script>
+    <link rel="stylesheet" type="text/css" href="public/vendor/msgbox/jquery.msgbox.css" />
+    <link rel="stylesheet" type="text/css" href="public/css/framework7.ios.min.css">
+    <link rel="stylesheet" type="text/css" href="public/css/framework7.ios.colors.min.css">
+
+    <link rel="stylesheet" type="text/css" href="public/css/t.css">
+    <script type="text/javascript" src="public/vendor/msgbox/jquery.msgbox.min.js"></script>
+    <script type="text/javascript" src="public/vendor/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="public/vendor/util.js"></script>
+    <script type="text/javascript" src="public/vendor/framework7.min.js"></script>
+</head>
+<body>
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+    <div class="views">
+        <div class="view view-main">
+            <div class="navbar">
+              <div class="navbar-inner">
+                    <div class="navbar-inner">
+                      <div class="left">
+                        <a href="#" class="back link"> 
+                            <i class="icon icon-back"></i>
+                            <span>返回</span>
+                        </a>
+                     </div>
+                      <div class="center" style="left: 0px;">绑定手机界面</div>
+                      <div class="right"></div>
+                    </div>
+              </div>
+            </div>
+            <div class="pages navbar-through toolbar-through">
+              <!-- Page, "data-page" contains page name -->
+              <div data-page="index" class="page">
+                <!-- Scrollable page content -->
+                <div class="page-content">
+                      <div class="builInput">
+                        <p>绑定手机:</p>
+                        <span id="spanMobilePhoneMasked">131313131313</span>
+                    </div>
+                    <div class="builInput">
+                        <p>确定绑定手机:</p>
+                        <input type="text" class="input2" placeholder="绑定手机号" id="txtPhoneNumber">
+                    </div>
+                    <div class="builInput">
+                        <p>手机验证码:</p>
+                        <input type="text" class="input2" style="width: 2.5rem" placeholder="验证码" id="txtValidationCode">
+                        <input type="button" value="获取验证码" class="button3 button" id="btnSendValidateCode">
+                    </div>
+                    <input type="button" value="确定" class="button2 button" id="btnSubmit">
+                    <input type="button" value="取消" class="button2 button" id="btnCancel">
+                </div>
+              </div>
+            </div>
+            	
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+	var wait=60;
+	function time(o) {
+        if (wait == 0) {
+            o.removeAttribute("disabled");   
+            o.removeAttribute("style")        
+            o.value="获取验证码";
+            wait = 60;
+        } else {
+            o.setAttribute("disabled", true);
+            o.setAttribute("style","background-color:#f6f6f8;color:#241e20;border: 1px #241e20 solid;")
+            o.value="重新发送(" + wait + ")";
+            wait--;
+            setTimeout(function() {
+                time(o)
+            },
+            1000)
+        }
+    }
+
+    $(function() {
+        $(document).ajaxStop($.unblockUI);
+    });
+
+    function validateInputFields() {
+        var txtPhoneNumberVal = $("#txtPhoneNumber").val();
+        var txtValidationCodeVal = $("#txtValidationCode").val();
+
+        var mobileNoMasked = $.getUrlVar("MobileNoMasked") || "";
+        if(checkMobileNoMatchesMobileNoMasked(txtPhoneNumberVal,mobileNoMasked) == false) {
+            return false;
+        }
+
+        if(!txtValidationCodeVal) {
+            var errorMessage = "验证码不能为空";
+            popupErrorMessage(errorMessage);
+            return false;
+        }
+
+        return true;
+    }
+
+    $(function() {
+        var mobileNoMasked = $.getUrlVar("MobileNoMasked") || "";
+        var userName = $.getUrlVar("UserName") || "";
+        $("#spanMobilePhoneMasked").text(mobileNoMasked);
+    });
+
+	$("#btnSendValidateCode").click(function(){
+        if(validateInputFields() == false) {
+            return;
+        }
+
+  		time(this);
+        var userName =  $.getUrlVar("UserName") || "";
+        var txtPhoneNumberVal = $("#txtPhoneNumber").val();
+        sendValidationCodeRequest(userName,txtPhoneNumberVal);
+	});
+
+    $("#btnSubmit").click(function() { //调用绑定操作
+        if(validateInputFields() == false) {
+            return;
+        }
+
+        $.blockUI({});
+        var userName =  $.getUrlVar("UserName") || "";
+        var txtPhoneNumberVal = $("#txtPhoneNumber").val();
+        var txtValidationCodeVal = $("#txtValidationCode").val() || "";
+        sendBindPhoneNumberRequest(userName,txtPhoneNumberVal,txtValidationCodeVal);
+    });
+
+    $("#btnCancel").click(function() {
+        //do nothing
+    });
+
+//    $(function() {
+//        var resultCode = $.getUrlVar("resultCode");
+//        window.resultCode = resultCode;//store in the global variable
+//    });
+
+    function sendValidationCodeRequest(userName, phone) {
+        var sendTag = 1; //bind phone number
+        var post_data = "UserName=" + userName.toString() + "&" + "Phone=" + phone.toString() + "&SendTag=0";
+        $.ajax({
+            type       : "POST",
+            url: "http://localhost:52846/api/login/SendValidationCode",
+            data: post_data,
+            dataType   : "json",
+            success    :sendValidationCodeSucceeded,
+            error:sendValidationCodeFailed
+        });
+    }//sendValidationCodeRequest
+
+    function sendValidationCodeSucceeded(data,status,xhr) {
+        //none
+    }//sendValidationCodeSucceeded
+
+    function sendValidationCodeFailed(xhr,status,error) {
+        popupErrorMessage(error);
+    }
+
+
+    function sendBindPhoneNumberRequest(userName, phoneNumber,validationCode) {
+        var post_data = "UserName=" + userName.toString() + "&" + "Phone=" + phoneNumber.toString() + "&" + "ValidateCode=" + validationCode.toString();
+        $.ajax({
+            type       : "POST",
+            url: "http://localhost:52846/api/login/BindPhoneNumber",
+            data: post_data,
+            dataType   : "json",
+            success    : bindPhoneNumberSucceeded,
+            error: bindPhoneNumberFailed
+        });
+    }//sendBindPhoneNumberRequest
+
+    function bindPhoneNumberSucceeded(data,status,xhr) {
+        var resultCode = data.Head.ResultCode;
+        if(resultCode == 0) { //ok
+            var loginResultCode = $.getUrlVar("resultCode");
+            checkSecretCodeSet(loginResultCode);
+        }else { //binding failed
+            popupErrorMessage(data.Head.ResultMessage);
+        }
+    }
+
+    function bindPhoneNumberFailed(xhr,status,error) {
+        popupErrorMessage(error);
+    }
+</script>
+</html>

@@ -1,0 +1,36 @@
+{
+  "NewsList": [
+    {
+      "ID": "115",
+      "Title": "图片招聘",
+      "Tabs": "公告通知",
+      "Body": "反倒是范德萨范德萨发",
+      "ModifyDate": "2015-11-30 14:16:24",
+      "Attachments": false
+    },
+    {
+      "ID": "114",
+      "Title": "制造物流部新闻",
+      "Tabs": "公告通知",
+      "Body": "打造世界级工厂，创建高效物流企业</p><p>目标不变，WCDM级企业",
+      "ModifyDate": "2015-11-30 13:57:49",
+      "Attachments": false
+    },
+    {
+      "ID": "113",
+      "Title": "Test Annoucement",
+      "Tabs": "公告通知",
+      "Body": "Test Annoucenment For mess",
+      "ModifyDate": "2015-11-30 13:52:16",
+      "Attachments": false
+    },
+    {
+      "ID": "112",
+      "Title": "发的是2风刀霜剑",
+      "Tabs": "头条新闻",
+      "Body": "Test Annoucenment For mess",
+      "ModifyDate": "2015-11-30 13:52:16",
+      "Attachments": false
+    }
+  ]
+}

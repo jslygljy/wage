@@ -1,0 +1,602 @@
+.swiper-wrapper img {
+    width: 100%;
+}
+
+.panel {
+    background-color: #30353b;
+}
+
+.culture_bg {
+    background-image: url(../images/cultureBg.png);
+    width: 5.15rem;
+    height: 6.4rem;
+    background-size: 100% 100%;
+    margin: 1rem auto 0px
+}
+
+.detailBg {
+    background-image: url(../images/detailBg.png);
+    width: 100%;
+    height: 100%;
+}
+
+.detailBg h3 {
+    text-align: center;
+    padding-top: 19px;
+}
+
+.detailBg p {
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+}
+
+.buttons-row .button:first-child {
+    border: none;
+}
+
+.index_list .item-media img {
+    width: 1.4rem;
+}
+
+.index_title {
+    font-size: 0.35rem;
+    color: #b92823;
+    font-weight: bold;
+    margin: 20px 0px 15px 17px;
+}
+
+.media-list .index_list .item-title {
+    color: #4d4c4a;
+    font-size: 0.17rem;
+}
+
+.media-list .index_list .item-subtitle {
+    color: #4d4c4a;
+    font-size: 0.17rem;
+}
+
+.media-list .index_list .dataTime {
+    font-size: 0.17rem;
+    color: #9a9996;
+}
+
+.left_list .item-content a {
+    width: 100%;
+    display: block;
+}
+
+.iconLeft1 {
+    background-image: url(../images/icon6.png);
+    width: 0.39rem;
+    height: 0.36rem;
+}
+
+.iconLeft2 {
+    background-image: url(../images/icon7.png);
+    width: 0.39rem;
+    height: 0.39rem;
+}
+
+.iconLeft3 {
+    background-image: url(../images/icon3.png);
+    width: 0.37rem;
+    height: 0.37rem;
+}
+
+.iconLeft4 {
+    background-image: url(../images/icon4.png);
+    width: 0.42rem;
+    height: 0.42rem;
+}
+
+.iconLeft5 {
+    background-image: url(../images/icon5.png);
+    width: 0.33rem;
+    height: 0.47rem;
+}
+
+.panel.panel-left .content-block p {
+    text-align: center;
+    margin: 10px 0px 0px 0px;
+}
+
+.panel.panel-left .content-block .list-block {
+    margin: 20px 0px;
+}
+
+.panel.panel-left .content-block {
+    margin: 20px 0;
+}
+
+.panel.panel-left .content-block img {
+    margin: 0rem 0px 0px 1.2rem
+}
+
+.panel.panel-left .content-block .list-block ul {
+    background-color: #30353b;
+}
+
+.panel.panel-left .content-block .list-block ul:before {}
+
+.panel.panel-left .content-block {
+    padding: 0px;
+}
+
+.panel.panel-left .content-block .list-block .item-content {
+    padding-left: 0px;
+}
+
+.panel.panel-left .content-block .item-title {
+    width: 100%;
+    text-align: center;
+}
+
+.panel.panel-left .content-block .item-title a {
+    color: #A7A8AC;
+}
+
+.panel.panel-left .content-block .item-inner {
+    height: 61px;
+    line-height: 61px;
+}
+
+.panel.panel-left .content-block .list-block ul:after,
+.panel.panel-left .content-block .list-block ul:before {
+    height: 0px;
+}
+
+.icon1 {
+    background-image: url(../images/icon6.png);
+    width: 39px;
+    height: 36px;
+    margin-left: 27px;
+}
+
+.icon2 {
+    background-image: url(../images/icon7.png);
+    width: 39px;
+    height: 39px;
+    margin-left: 27px;
+}
+
+.icon3 {
+    background-image: url(../images/icon3.png);
+    width: 37px;
+    height: 37px;
+    margin-left: 27px;
+}
+
+.icon4 {
+    background-image: url(../images/icon4.png);
+    width: 42px;
+    height: 42px;
+    margin-left: 27px;
+}
+
+.icon5 {
+    background-image: url(../images/icon5.png);
+    width: 33px;
+    height: 47px;
+    margin-left: 27px;
+}
+
+.bgRed {
+    background-color: #E53A30;
+    color: #fff;
+    border: none;
+    width: 50%;
+    margin-left: 25%;
+}
+
+.newH3 {
+    color: #282627;
+    text-align: center;
+}
+
+.newspan1 {
+    color: #969597;
+}
+
+.newspan2 {
+    color: #969597;
+    margin-left: 0.4rem;
+}
+
+.newpage {
+    padding: 0px 15px;
+}
+
+.systemtop {
+    margin: 0px;
+    background-color: #fff;
+    border-bottom: 1px #d8d8d8 solid;
+    height: 62px;
+    line-height: 62px;
+}
+
+.systemtop .buttons-row a {
+    color: #585858;
+    border: none;
+    height: 62px;
+    line-height: 62px;
+    font-size: 14px;
+    padding: 0px;
+}
+
+.systemtop .buttons-row a.active {
+    background-color: #fff;
+    border-bottom: 3px #e73930 solid;
+    border-left: none;
+    border-radius: 0px;
+}
+
+.wageTop {
+    background-color: #e53a30;
+}
+
+.wageTop p {
+    color: #fff;
+    margin: 0px;
+    line-height: 0.5rem;
+    height: 0.5rem
+}
+
+.wageTop img {
+    width: 80%;
+    margin: 0.4rem 0px 0px 20%
+}
+
+.wageTop .col-66 {
+    margin-top: 17px;
+    padding-left: 13px;
+}
+
+.wageTop .wageP {
+    margin: 0.3rem;
+    height: 1.2rem;
+}
+
+.wageList .item-title {
+    font-size: 14px;
+}
+
+.wageList .item-inner span {
+    float: right;
+    color: #e13f3d;
+}
+
+.wageContent .content-block p {
+    color: #2a2829;
+    text-align: center;
+    font-size: 14px;
+}
+
+.wageContent .content-block p span {
+    color: #db3333;
+    margin-left: 10px;
+}
+
+.searchword {
+    color: #868688;
+    margin-top: 16px;
+}
+
+.searchword span {
+    color: #868688;
+}
+
+.searchword a {
+    color: #868688;
+}
+
+.searchList {
+    margin-top: 15px;
+}
+
+.searchbar {
+    padding: 0px 10px;
+}
+
+.searchList.list-block .item-link .item-inner {
+    background-image: url(../images/searchIcon.png);
+    background-size: 40px 39px
+}
+
+.searchList.list-block .item-content {
+    position: relative;
+    height: 80px;
+    padding: 0px;
+    width: 100%;
+}
+
+.searchList.list-block .item-title {
+    position: absolute;
+    left: 10px;
+    top: 20px;
+}
+
+.searchList.list-block .item-text {
+    position: absolute;
+    left: 10px;
+    top: 47px;
+    height: 20px;
+}
+
+.wageTab .button.active {
+    background-color: #e53a30;
+    color: #fff;
+}
+
+.wageTab .button {
+    border: 1px #d1363a solid;
+    color: #d1363a;
+    padding: 0 20px;
+    text-overflow: initial;
+}
+
+.wageTab.buttons-row .button:first-child {
+    border: 1px #e53a30 solid
+}
+
+.newList .button.active {
+    background-color: #e53a30;
+    color: #fff;
+}
+
+.newList .button {
+    border: 1px #d1363a solid;
+    color: #d1363a;
+    padding: 0 15px;
+    text-overflow: initial;
+}
+
+.newList.buttons-row .button:first-child {
+    border: 1px #e53a30 solid
+}
+
+.dateInput {
+    border: 1px #7fd4f9 solid;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    text-indent: 18px;
+    border-radius: 10px;
+    color: #0078f2;
+    margin: 15px 0px 0px 16px;
+}
+
+.newLeft {
+    display: inline-block;
+    width: 16%;
+    border-right: 1px #198df4 solid
+}
+
+.newLeft li {
+    list-style: none;
+}
+
+.newRight {
+    display: inline-block;
+    width: 81%;
+    vertical-align: top;
+}
+
+.newDetail .button {
+    padding: 0px 10px;
+}
+
+.hisYear {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #fff;
+    margin: 0px;
+    color: #eb4d46;
+    font-size: 19px;
+    position: fixed;
+    z-index: 3
+}
+
+.wageAll {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.rightLine {
+    width: 50%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    border-right: 1px #9b9a98 solid;
+}
+
+.wageAlllist {
+    position: absolute;
+    left: 41%;
+    padding: 0px;
+    top: 0px;
+    margin: 0px;
+}
+
+.wageAlllist .moneyred {
+    background-color: #e53a30;
+}
+
+.wageAlllist .moneyBule {
+    background-color: #1b8cf2;
+}
+
+.wageAlllist .moneygreen {
+    background-color: #12CD8E;
+}
+
+.wageAlllist li {
+    list-style: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    text-align: center;
+        line-height: 19px;
+    color: #fff;
+    top: 14px;
+    position: absolute;
+    left: 0px;
+}
+.wageAlllist li span:nth-child(1){ 
+	    display: inline-block;
+	    font-size: 17px;
+    width: 100%;
+    vertical-align: initial;
+    margin-top: 10px;
+}
+
+
+.monthMoney p {
+    color: #fff;
+    margin: 0px;
+    font-size: 12px;
+    padding: 0px 8px;
+    margin-top: 9px;
+    float: left;
+    line-height: 20px;
+}
+
+.monthMoney p i {
+    background-image: url(../images/demo-icon.png);
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    left: -3px;
+}
+
+.monthMoney p:last-child {
+    text-align: right;
+    background-color: #FEFEFE;
+    width: 69px;
+    margin-left: 35px;
+    border-radius: 7px;
+    padding: 0px 6px;
+}
+.monthMoney p:last-child a{
+    color: #8B8F92;
+}
+.moneyList {
+    position: absolute;
+}
+
+.monthMoney .moneyLeft {
+    left: 4px;
+    top: 0px;
+}
+
+.monthMoney .moneyRight {
+    right: 4px;
+    top: 0px;
+}
+
+.monthMoney .moneyList {
+    width: 38%;
+    background-color: #1b8cf2;
+    border-radius: 9px;
+    padding-bottom: 20px;
+}
+
+.monthMoney .moneyBule {
+    background-color: #1b8cf2;
+}
+
+.monthMoney .moneyred {
+    background-color: #e53a30;
+}
+
+.monthMoney .moneygreen {
+    background-color: #12CD8E;
+}
+
+.newLeft ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+.newLeft li {
+    line-height: 35px;
+    background-image: url(../images/newIcon1.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+    padding-right: 28%;
+    width: 100%;
+    text-align: right;
+    margin-left: -16%;
+}
+
+.newLeft ul li.newIcon2 {
+    background-image: url(../images/newIcon2.png);
+    padding-bottom: 91px;
+    line-height: 34px;
+    background-position: right 10px;
+}
+
+.newRight .content-block-title {
+    color: #ee3229;
+    margin: 8px 0px 0px 0px;
+    font-size: 13px;
+}
+
+.newRight ul li {
+    border-bottom: 1px #c6c6c8 solid;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.newRight ul li p {
+    color: #7d7d7d;
+    display: inline-block;
+    width: 93%;
+    font-size: 12px;
+    margin: 4px 0px 0px 0px;
+}
+
+.newRight ul li img {
+    width: 28%;
+    display: inline-block;
+    vertical-align: text-bottom;
+}
+
+.newRight ul li span {
+    color: #bcbcbe;
+    position: absolute;
+    height: 30px;
+    bottom: 0px;
+    right: 10px;
+    line-height: 30px;
+}
+
+.newRight ul {
+    padding-left: 16px;
+    margin-top: 8px;
+}
+
+.infinite-scroll-preloader {
+    position: absolute;
+    bottom: 0px;
+    left: 45%;
+    display: none;
+}
+.wagedetailAl{
+    background-color: #E53A30;
+    font-size: 14px;color: #fff;
+    height:40px;line-height: 40px;    
+    text-align: center;
+    margin: 0px;
+}
+.wagedetailAl a{
+    color: #fff;font-size: 14px;
+    float: right;margin-right: 10px;
+}
+#wageRemarks p{
+    text-align: left
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Your app title -->
+    <title>首页</title>
+    <!-- Path to Framework7 iOS CSS theme styles-->
+    <link rel="stylesheet" href="public/css/framework7.ios.min.css">
+    <!-- Path to Framework7 iOS related color styles -->
+    <link rel="stylesheet" href="public/css/framework7.ios.colors.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="public/css/my-app.css">
+</head>
+<body>
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+      <div class="content-block">
+        <img src="public/images/leftLogin.png" style="width:138px">
+        <p id="leftname"></p>
+        <div class="list-block">
+          <ul>
+            <li class="item-content"  id="NewTabs">
+              <div class="item-inner">
+                <i class="icon icon1"></i>
+                <div class="item-title"><a href="newList.html">公司新闻</a></div>
+              </div>
+            </li>
+            <li class="item-content" id="wageTabs">
+              <div class="item-inner">
+                <i class="icon icon2"></i>
+                <div class="item-title"><a href="wageQuery.html">工资查询</a></div>
+              </div>
+            </li>
+            <li class="item-content">
+              <div class="item-inner">
+                <i class="icon icon3"></i>
+                <div class="item-title"><a href="comCulture.html">公司文化</a></div>
+              </div>
+            </li>
+            <li class="item-content">
+              <div class="item-inner">
+                <i class="icon icon4"></i>
+                <div class="item-title"><a href="comSystem.html">员工请假</a></div>
+              </div>
+            </li>
+            <li class="item-content">
+              <div class="item-inner">
+                <i class="icon icon5"></i>
+                <div class="item-title">关于</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <a href="#" class="button bgRed">退出</a>
+      </div>
+    </div>
+    <!-- Views-->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class-->
+      <div class="view view-main" data-page="index">
+        <!-- Top Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <!-- We have home navbar without left link-->
+            <div class="center sliding" style="left: 303px;">工资查询</div>
+          </div>
+        </div>
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+          <!-- Page, data-page contains page name-->
+          <div data-page="index" class="page">
+            <!-- Scrollable page content-->
+            <div class="page-content">
+                <!-- Slider container -->
+                <div class="swiper-container">
+                    <!-- Slides wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide"><img src="public/images/banner1.png"></div>
+                        <div class="swiper-slide"><img src="public/images/banner1.png"></div>
+                        <div class="swiper-slide"><img src="public/images/banner1.png"></div>
+                    </div>
+                    <!-- Pagination, if required -->
+                    <div class="swiper-pagination"></div>
+                </div>
+
+                <div class="content-block-title index_title">头条新闻</div>
+                <div class="list-block media-list" id="newType1">
+                  <ul>
+                  </ul>
+                </div>
+                <div class="content-block-title index_title">公告通知</div>
+                <div class="list-block media-list" id="newType2">
+                  <ul>
+                  </ul>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="public/vendor/framework7.min.js"></script>
+    <script type="text/javascript" src="public/js/my-app.js"></script>
+    <script type="text/javascript" src="public/vendor/jquery.js"></script>
+    <script type="text/javascript" src="public/vendor/caculate-rem.js"></script>
+</body>
+
+</html>

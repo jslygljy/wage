@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+	<script type="text/javascript" src="public/vendor/jquery.js"></script>
+    <script type="text/javascript" src="public/vendor/caculate-rem.js"></script>
+    <link rel="stylesheet" type="text/css" href="public/vendor/msgbox/jquery.msgbox.css" />
+    <link rel="stylesheet" type="text/css" href="public/css/framework7.ios.min.css">
+    <link rel="stylesheet" type="text/css" href="public/css/framework7.ios.colors.min.css">
+
+    <link rel="stylesheet" type="text/css" href="public/css/t.css">
+    <script type="text/javascript" src="public/vendor/msgbox/jquery.msgbox.min.js"></script>
+    <script type="text/javascript" src="public/vendor/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="public/vendor/util.js"></script>
+    <script type="text/javascript" src="public/vendor/framework7.min.js"></script>
+    
+</head>
+<body>
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+    <div class="views">
+        <div class="view view-main" data-page="login">
+            <div class="pages navbar-through toolbar-through">
+              <!-- Page, "data-page" contains page name -->
+              <div data-page="index" class="page login">
+                    <div class="center"><img src="public/images/loginLogo.png" class="loginLogo"></div>
+                    <div class="loginleft"><i class="icon icon1"></i><input type="input" class="loginInput" id="txtUserName"></div>
+                    <div class="loginleft"><i class="icon icon2"></i><input type="password" class="loginInput" id="txtPassword"></div>
+                    <input type="button" value="登录" class="button" id="loginButton">
+                    <!--<div class="logincheck">-->
+                        <!--<i class="icon icon-checkbox"></i>-->
+                        <!--<span>记住密码</span>-->
+                    <!--</div>-->
+                    <a class="loginright" href="ResetPassword.html" id="linkForgetPassword">忘记密码?</a>
+              </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="public/js/my-app.js"></script>
+<script type="text/javascript" >
+
+    $(function() {
+        $(document).ajaxStop($.unblockUI);
+
+        var userName = $.getUrlVar("UserName") || "";
+        if(!!userName) {
+            $("#txtUserName").val(userName);
+        }
+    });
+
+    $("#loginButton").click(function() {
+        var txtUserNameVal = $("#txtUserName").val();
+        var txtPasswordVal = $("#txtPassword").val();
+
+        if(!txtPasswordVal) {
+            popupErrorMessage("用户名不能为空！");
+            return;
+        }else if(!txtPasswordVal) {
+            popupErrorMessage("密码不能为空！");
+            return;
+        }
+        if (escape(txtPasswordVal).indexOf("%u") >= 0) {
+            popupErrorMessage("密码不能为中文！");
+            return;
+        }
+
+        //ok,发起登录
+        $.blockUI( loadingMessage());
+        sendLoginRequest(txtUserNameVal,txtPasswordVal);
+    });
+
+    function sendLoginRequest(userName, password) {
+        var post_data = "UserName=" + userName.toString() + "&" + "Password=" + password.toString();
+        $.ajax({
+            type       : "POST",
+            url: "http://localhost:52846/api/login/login",
+            data: post_data,
+            dataType   : "json",
+            success    : loginSucceeded,
+            error: loginFailed
+        });
+    }//sendLoginRequest
+
+    function loginSucceeded(data,status,xhr) {
+        var loginResultCode = data.Head.ResultCode;
+        if(isError(loginResultCode)) {
+            var loginResponseMessage = JSON.parse(data.Head.ResultMessage);
+            popupErrorMessage(loginResponseMessage.MsgError);
+        }else {
+            localStorage.LoginResponseMessage = data.Head.ResultMessage; //JSON.parse(data.Head.ResultMessage);
+            localStorage.LoginAccount = data.Body.LoginAccount || "";
+            localStorage.UserName = $("#txtUserName").val();
+            localStorage.MobileNoMasked = data.Body.MobileNoMasked || "";
+            checkPhoneNumberBind(loginResultCode);
+        }
+    }//loginSucceed
+
+    function loginFailed(xhr,status,error) {
+        popupErrorMessage(error);
+    }
+
+</script>
+</html>

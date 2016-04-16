@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绑定手机</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+	<link rel="stylesheet" type="text/css" href="public/css/t.css">
+</head>
+<body>
+	<div class="navbar">
+	    <div class="navleft">
+	    	<a href="#" class="back link"> 
+	    		<i class="icon icon-back"></i>
+	    		<span>返回</span>
+	    	</a>
+	    </div>
+	    <div class="center sliding">绑定手机界面</div>
+	</div>
+	<div class="builInput">
+		<p>绑定手机:</p>
+		<span>131313131313</span>
+	</div>
+	<div class="builInput">
+		<p>确定绑定手机:</p>
+		<input type="text" class="input2" placeholder="绑定手机号">
+	</div>
+	<div class="builInput">
+		<p>手机验证码:</p>
+		<input type="text" class="input2" style="width: 2.5rem" placeholder="验证码">
+		<input type="button" value="获取验证码" class="button3 button">
+	</div>
+	<input type="button" value="确定" class="button2 button">
+	<input type="button" value="取消" class="button2 button">
+</body>
+<script type="text/javascript" src="public/vendor/jquery.js"></script>
+<script type="text/javascript" src="public/vendor/caculate-rem.js"></script>
+<script type="text/javascript">
+	var wait=60;
+	function time(o) {
+        if (wait == 0) {
+            o.removeAttribute("disabled");   
+            o.removeAttribute("style")        
+            o.value="获取验证码";
+            wait = 60;
+        } else {
+            o.setAttribute("disabled", true);
+            o.setAttribute("style","background-color:#f6f6f8;color:#241e20;border: 1px #241e20 solid;")
+            o.value="重新发送(" + wait + ")";
+            wait--;
+            setTimeout(function() {
+                time(o)
+            },
+            1000)
+        }
+    }
+	$(".button3").click(function(){
+  		time(this);
+	});
+</script>
+</html>

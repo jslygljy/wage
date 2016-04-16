@@ -1,0 +1,185 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-size: 14px;
+}
+body{
+  overflow-y:scroll;
+  overflow-x:hidden; 
+}
+.login {
+    background-color: #e53a30;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+.loginLogo {
+    width: 3.34rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.center {
+    text-align: center;
+}
+
+.sliding {
+    color: #e63b31;
+    line-height: 0.8rem;
+}
+
+.navleft {
+    position: absolute;
+    left: 0.2rem;
+    top: 0.03rem;
+}
+
+.loginInput {
+    background-image: url("../images/input_bg.png");
+    width: 4.78rem;
+    height: 0.69rem;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    background-size: 100% 100%;
+    text-indent: 0.9rem;
+    color: #fff;
+    margin: 0.2rem 0px;
+}
+
+.builInput p {
+    display: inline-block;
+        width: 1.9rem;
+    text-align: right;
+    color: #e43a32;
+    font-size: 13px;
+}
+.builInput{
+  width: 100%;
+  height: 0.8rem;margin: 0.1rem 0px;
+  line-height: 0.8rem;
+}
+.input2 {
+    background-color: #f6f6f8;
+    border: 1px #241e20 solid;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    display: inline-block;
+    width: 4.25rem;
+    text-indent: 0.2rem;
+}
+
+.icon {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-size: 100% 100%;
+    z-index: 2
+}
+
+.icon1 {
+    background-image: url("../images/icon1.png");
+    width: 0.66rem;
+    height: 0.63rem;
+    top: 0.22rem;
+}
+
+.icon2 {
+    background-image: url("../images/icon2.png");
+    width: 0.66rem;
+    height: 0.62rem;
+    top: 0.22rem;
+}
+
+.icon-checkbox {
+    background-image: url("../images/check1.png");
+    width: 0.34rem;
+    height: 0.33rem;
+    position: inherit;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.loginleft {
+    margin-left: 13%;
+    position: relative;
+}
+
+.button {
+        -webkit-appearance: none;
+    color: #fff;
+    height: 0.69rem;
+    line-height: 0.69rem;
+    text-align: center;
+    border-radius: 5px;
+    width: 74%;
+    background-color: #0d2d84;
+    border: none;
+    font-size: 18px;
+    margin: 0.4rem 13%;
+}
+
+input[type=submit].button2, input[type=button].button2 {
+    width: 94%;
+    height: 0.58rem;
+    line-height: 0.58rem;
+    background-color: #e43a32;
+    margin: 0.5rem 0px -0.2rem 0.2rem;
+    font-size: 14px;
+    padding: 0px;
+}
+input[type=submit].button3, input[type=button].button3{
+        width: 1.6rem;
+    height: 0.6rem;
+    line-height:0.6rem;
+    background-color: #0d2d84;
+    display:inline-block;
+    font-size: 12px;
+    margin: 0px;
+}
+.logincheck {
+    display: inline-block;
+    font-size: 14px;
+    color: #fff;
+    margin-left: 13%;
+}
+
+.loginright {
+    display: inline-block;
+    font-size: 14px;
+    color: #fff;
+    margin-left: 1.2rem;
+}
+
+.navbar {
+    background-color: #f6f6f8;
+    height: 0.8rem;
+    width: 100%;
+    position: relative;
+    margin-bottom: 0.4rem;
+    border-bottom: 1px #ebebeb solid;
+}
+
+.softp {
+    color: #5a5757;
+    width: 90%;
+    padding: 0.4rem 5%;
+    border-bottom: 1px #c5c5c5 solid
+}
+.resetP{color: #5D5B5C;width: 93%;margin: 0.3rem 0px 0.3rem 3%;line-height: 0.44rem;}
+
+/*# sourceMappingURL=t.css.map */
+.login .page{
+        background-color: #e53a30;
+}
+.login i.icon{
+    position: absolute;
+}
+.login input[type=submit].button,.login input[type=button].button{
+    width: 74%;
+}
+.warningmessage{
+        margin-top: 0.6rem;
+    padding: 0px 0.3rem;
+}

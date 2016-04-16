@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Your app title -->
+    <title>历史工资</title>
+    <!-- Path to Framework7 iOS CSS theme styles-->
+    <link rel="stylesheet" href="public/css/framework7.ios.min.css">
+    <!-- Path to Framework7 iOS related color styles -->
+    <link rel="stylesheet" href="public/css/framework7.ios.colors.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="public/css/my-app.css">
+</head>
+<body>
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+      <div class="content-block">
+        <img src="public/images/leftLogin.png" style="width:138px">
+        <p id="leftname"></p>
+        <div class="list-block">
+          <ul>
+            <li class="item-content"  id="NewTabs">
+              <div class="item-inner">
+                <i class="icon icon1"></i>
+                <div class="item-title"><a href="newList.html">公司新闻</a></div>
+              </div>
+            </li>
+            <li class="item-content" id="wageTabs">
+              <div class="item-inner">
+                <i class="icon icon2"></i>
+                <div class="item-title"><a href="wageQuery.html">工资查询</a></div>
+              </div>
+            </li>
+            <li class="item-content">
+              <div class="item-inner">
+                <i class="icon icon3"></i>
+                <div class="item-title"><a href="comCulture.html">公司文化</a></div>
+              </div>
+            </li>
+            <li class="item-content">
+              <div class="item-inner">
+                <i class="icon icon4"></i>
+                <div class="item-title"><a href="comSystem.html">员工请假</a></div>
+              </div>
+            </li>
+            <li class="item-content">
+              <div class="item-inner">
+                <i class="icon icon5"></i>
+                <div class="item-title">关于</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <a href="#" class="button bgRed">退出</a>
+      </div>
+    </div>
+    <!-- Views-->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class-->
+      <div class="view view-main" data-page="newList">
+        <!-- Top Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <!-- We have home navbar without left link-->
+            <div class="center sliding" style="left: 303px;">
+              <!-- tabs控制面板 -->
+              <div class="buttons-row wageTab">
+                <!-- 关联到第一个tab, 默认激活 -->
+                <a href="wageQuery.html" class="tab-link button external">当月工资</a>
+                <!-- 关联到第二个tab -->
+                <a href="hisWage.html" class="tab-link active button">历史工资</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+          <!-- Page, data-page contains page name-->
+          <div data-page="newList" class="page">
+            <!-- Scrollable page content-->
+            <div class="page-content infinite-scroll" data-distance="100">
+                <p class="hisYear" data-year="2015">2015</p>
+                <div class="wageAll">
+                    <div class="rightLine"></div>
+                    <ul class="wageAlllist">
+                    </ul>
+                    <div class="monthMoney">
+                        <div class="monthDetail">
+                        </div>
+                        <!-- 加载提示符 -->
+                        <div class="infinite-scroll-preloader">
+                          <div class="preloader"></div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style type="text/css">
+      .infinite-scroll-preloader {
+        margin-top:-20px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .infinite-scroll-preloader .preloader {
+        width:34px;
+        height:34px;
+      }   
+    </style>
+    <script type="text/javascript" src="public/vendor/framework7.min.js"></script>
+    <script type="text/javascript" src="public/js/my-app.js"></script>
+    <script type="text/javascript" src="public/vendor/jquery.js"></script>
+    <script type="text/javascript" src="public/vendor/caculate-rem.js"></script>
+    <script type="text/javascript">
+    	//var yearlater = $$.scrollTop(yearlater);
+        //$$(window).scrollTo(yearlater){
+        //	var lineHeight = $$(".wageAlllist li:last-child").offset().top + 260;
+ 		//	$$(".rightLine").attr("style","height:"+lineHeight+"px");	
+    	//};
+        $$("body").on("click",".tabbar-label",function(){
+            var popupHTML = '<div class="list-block accordion-list wageList popup">'+
+                              '<p class="wagedetailAl"><span id="wageYear"></span>年<span id="wageMonth"></span>月份工资单详细<a href="#" class="close-popup">X</a></p>'+
+                              '<ul>'+
+                                  '<li class="accordion-item">'+
+                                      '<a href="#" class="item-content item-link">'+
+                                        '<div class="item-inner">'+
+                                          '<div class="item-title"><label id="wageMonth"></label>月实发金额[C=A-B]</div>'+
+                                          '<span id="wageIncome"></span>'+
+                                        '</div>'+
+                                      '</a>'+
+                                      '<div class="accordion-item-content wageContent">'+
+                                        '<div class="content-block" id="wageList">'+
+                                        '</div>'+
+                                      '</div>'+
+                                  '</li>'+
+                                  '<li class="accordion-item">'+
+                                      '<a href="#" class="item-content item-link">'+
+                                        '<div class="item-inner">'+
+                                          '<div class="item-title">应发项目[A]</div>'+
+                                          '<span id="wageIncome2"></span>'+
+                                        '</div>'+
+                                      '</a>'+
+                                      '<div class="accordion-item-content wageContent">'+
+                                        '<div class="content-block" id="wageA">'+
+                                        '</div>'+
+                                      '</div>'+
+                                  '</li>'+
+                                  '<li class="accordion-item">'+
+                                      '<a href="#" class="item-content item-link">'+
+                                        '<div class="item-inner">'+
+                                          '<div class="item-title">代扣代缴项目[B]</div>'+
+                                          '<span id="moneyB"></span>'+
+                                        '</div>'+
+                                      '</a>'+
+                                      '<div class="accordion-item-content wageContent">'+
+                                        '<div class="content-block" id="wageB">'+
+                                        '</div>'+
+                                      '</div>'+
+                                  '</li>'+
+                                  '<li class="accordion-item">'+
+                                      '<a href="#" class="item-content item-link">'+
+                                        '<div class="item-inner">'+
+                                          '<div class="item-title">公司为您缴纳的保险[D]</div>'+
+                                          '<span id="moneyD"></span>'+
+                                        '</div>'+
+                                      '</a>'+
+                                      '<div class="accordion-item-content wageContent">'+
+                                        '<div class="content-block" id="wageD">'+
+                                        '</div>'+
+                                      '</div>'+
+                                  '</li>'+
+                                  '<li class="accordion-item">'+
+                                      '<a href="#" class="item-content item-link">'+
+                                        '<div class="item-inner">'+
+                                          '<div class="item-title">公司总成本[E=A+D]</div>'+
+                                          '<span id="moneyE"></span>'+
+                                        '</div>'+
+                                      '</a>'+
+                                      '<div class="accordion-item-content wageContent">'+
+                                        '<div class="content-block">'+
+                                        '</div>'+
+                                      '</div>'+
+                                  '</li>'+
+                                  '<li class="accordion-item">'+
+                                      '<a href="#" class="item-content item-link">'+
+                                        '<div class="item-inner">'+
+                                          '<div class="item-title">信息沟通栏</div>'+
+                                        '</div>'+
+                                      '</a>'+
+                                     '<div class="accordion-item-content wageContent">'+
+                                        '<div class="content-block" id="wageRemarks">'+
+                                        '</div>'+
+                                      '</div>'+
+                                  '</li>'+
+                              '</ul>'+
+                            '</div>'
+            myApp.popup(popupHTML);
+            var num = $(this).closest(".moneyList").index();
+            $$.get("json/wage.json", function(data) {
+                data = JSON.parse(data)
+                if (data.EmployeeInfoEntity.length > num) {
+                    $$("#username").html(data.EmployeeInfoEntity[num].StaffName);
+                    $$("#userpleace").html(data.EmployeeInfoEntity[num].DepartmentName);
+                    $$("#userLogin").html(data.EmployeeInfoEntity[num].PrintDate);
+                    $$("#userBegin").html(data.EmployeeInfoEntity[num].BeginDate);
+                    $$("#userEnd").html(data.EmployeeInfoEntity[num].EndDate);
+                    $$('#wageMonth').html(data.EmployeeInfoEntity[num].PayPeriod);
+                    $$("#moneyB").html(data.EmployeeInfoEntity[num].DeductToalValue)
+                    $$("#moneyD").html(data.EmployeeInfoEntity[num].ActualToalValue)
+                    $$("#moneyE").html(data.EmployeeInfoEntity[num].CompToalCost)
+                    $$('#wageIncome').html(data.EmployeeInfoEntity[num].IncomeTotalValue);
+                    $$('#wageIncome2').html(data.EmployeeInfoEntity[num].IncomeTotalValue);
+                    $$('#wageYear').html(data.EmployeeInfoEntity[num].PayRollYear)
+                    var strHtml = '';  
+                    for (var i =0; i <data.EmployeeInfoEntity[num].A_List.length; i++) {
+                        strHtml +='<p>'+ data.EmployeeInfoEntity[num].A_List[i].Name +':<span>¥'+ data.EmployeeInfoEntity[num].A_List[i].Money +'</span></p>'
+                    };
+                    $("#wageList").append(strHtml);
+
+                    var strHtml2 = '';  
+                    for (var i =0; i <data.EmployeeInfoEntity[num].A_List.length; i++) {
+                        strHtml2 +='<p>'+ data.EmployeeInfoEntity[num].A_List[i].Name +':<span>¥'+ data.EmployeeInfoEntity[num].A_List[i].Money +'</span></p>'
+                    };
+                    $("#wageA").append(strHtml2);
+
+                    var strHtml3 = '';  
+                    for (var i =0; i <data.EmployeeInfoEntity[num].B_List.length; i++) {
+                        strHtml3 +='<p>'+ data.EmployeeInfoEntity[num].B_List[i].Name +':<span>¥'+ data.EmployeeInfoEntity[num].B_List[i].Money +'</span></p>'
+                    };
+                    $("#wageB").append(strHtml3);
+
+                    var strHtml4 = '';  
+                    for (var i =0; i <data.EmployeeInfoEntity[num].D_List.length; i++) {
+                        strHtml4 +='<p>'+ data.EmployeeInfoEntity[num].D_List[i].Name +':<span>¥'+ data.EmployeeInfoEntity[num].D_List[i].Money +'</span></p>'
+                    };
+                    $("#wageD").append(strHtml4);
+
+                    var strHtml5 = '';  
+                    for (var i =0; i <data.EmployeeInfoEntity[num].Remarks.length; i++) {
+                        strHtml5 +='<p>'+ data.EmployeeInfoEntity[num].Remarks[i].Remarks +'</p>'
+                    };
+                    $("#wageRemarks").append(strHtml5);
+                }
+            });
+        }); 
+      $$.get("json/wage.json", function(data) {
+          data = JSON.parse(data)
+          var strHtml6 = '';  
+          for (var i =0; i <data.EmployeeInfoEntity.length; i++) {
+              strHtml6 +='<li class="moneyBule"><span>'+ data.EmployeeInfoEntity[i].PayPeriod +'</span><span>月份</span></li>'
+          };
+          $(".wageAlllist").append(strHtml6);  
+          
+          var strHtml = '';  
+          for (var i =0; i <data.EmployeeInfoEntity.length; i++) {
+              if (i%2 ==0) { 
+                strHtml +='<div class="moneyList moneyRight moneyred">'
+                for (var j =0; j <data.EmployeeInfoEntity[i].A_List.length; j++) {
+                    strHtml +='<p>'+ data.EmployeeInfoEntity[i].A_List[j].Name +':<span>¥'+ data.EmployeeInfoEntity[i].A_List[j].Money +'</span></p>'
+                };
+                strHtml +='<p><i class="icon demo-icon-1"></i><a href="#" class="tabbar-label">工资详细</a></p>'
+                strHtml +='</div>'
+              }else{
+                strHtml +='<div class="moneyList moneyLeft moneyBule">'
+                for (var j =0; j <data.EmployeeInfoEntity[i].A_List.length; j++) {
+                    strHtml +='<p>'+ data.EmployeeInfoEntity[i].A_List[j].Name +':<span>¥'+ data.EmployeeInfoEntity[i].A_List[j].Money +'</span></p>'
+                };
+                strHtml +='<p><i class="icon demo-icon-1"></i><a href="#" class="tabbar-label">工资详细</a></p>'
+                strHtml +='</div>'
+              }
+          };
+          $(".monthDetail").append(strHtml);  
+
+          var mNum = $(".wageAlllist li").length;
+          for (var i = 0; i < mNum; i++) {
+            var mlength = ( i==0 ? '62' : '280'* +i+'');
+            $(".wageAlllist li").eq(i).attr("style","top:"+mlength+"px")
+            $(".monthMoney .moneyList").eq(i).attr("style","top:"+mlength+"px")
+            
+          };
+          var initNum = ($(".wageAlllist li").length-1) * 305 +62 ;
+          $$(".rightLine").attr("style","height:"+initNum+"px");
+
+
+      })
+    </script>
+</body>
+
+</html>
